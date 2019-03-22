@@ -1,0 +1,56 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Boris\bin;C:\work\ls\chat\node_modules\.bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Git\cmd;C:\Users\Boris\AppData\Local\Microsoft\WindowsApps;C:\Users\Boris\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Boris\AppData\Roaming\npm;C:\Users\Boris\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  10.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type object
+      at assertPath (path.js:39:11)
+      at Object.isAbsolute (path.js:404:5)
+      at module.exports.exports.default (C:\Program Files (x86)\Yarn\lib\cli.js:95510:16)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:50351:63
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
+
+npm manifest: 
+  {
+    "requires": true,
+    "lockfileVersion": 1,
+    "dependencies": {
+      "async-limiter": {
+        "version": "1.0.0",
+        "resolved": "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.0.tgz",
+        "integrity": "sha512-jp/uFnooOiO+L211eZOoSyzpOITMXx1rBITauYykG3BRYPu8h0UcxsPNB04RR5vo4Tyz3+ay17tR6JVf9qzYWg=="
+      },
+      "uuid": {
+        "version": "3.3.2",
+        "resolved": "https://registry.npmjs.org/uuid/-/uuid-3.3.2.tgz",
+        "integrity": "sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA=="
+      },
+      "ws": {
+        "version": "6.2.0",
+        "resolved": "https://registry.npmjs.org/ws/-/ws-6.2.0.tgz",
+        "integrity": "sha512-deZYUNlt2O4buFCa3t5bKLf8A7FPP/TVjwOeVNpw818Ma5nk4MLXls2eoEGS39o8119QIYxTrTDoPQ5B/gTD6w==",
+        "requires": {
+          "async-limiter": "~1.0.0"
+        }
+      }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

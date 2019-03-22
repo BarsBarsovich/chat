@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/main.css ">
+</head>
+<body>
+<div class="wrapper">
+    <div class="chat">
+        <div class="chat__left-side">
+            <div class="current-user">
+                <div class="current-user__photo">
+                    <!--<img src="" alt="">-->
+                </div>
+                <div class="current-user__fio">
+                    <span class="name"></span>
+                </div>
+
+            </div>
+            <div class="users__list">
+                <!--<div class="user">-->
+                    <!--<div class="user__img">-->
+                        <!--<img src="" alt="">-->
+                    <!--</div>-->
+                    <!--<div class="user__name">-->
+                        <!--<p class="user__name-par">4534543543</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="chat__right-side">
+            <div class="message__list">
+            </div>
+            <div class="message__area">
+                <div class="input__container">
+                    <input type="text" class="message__area-input" id="message">
+                </div>
+                <div class="button__container">
+                    <button class="button" id="sendMessage"> Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="login">
+        <p class="login__title">Авторизация</p>
+        <div class="login__wrapper">
+            <input type="text" class="login__input" placeholder="ФИО" id="fio">
+            <input type="text" class="login__input" placeholder="НИК" id="username">
+            <button class="button" id="login">Войти</button>
+        </div>
+    </div>
+
+    <input type="hidden" id="currentUserId">
+    <script src="./js/client.js"></script>
+</div>
+</body>
+</html>

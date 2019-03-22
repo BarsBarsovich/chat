@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+.wrapper {
+    height: 100%;
+    position: relative;
+}
+
+.chat {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    display: none;
+}
+
+
+.chat__left-side {
+    width: 20%;
+    background: orange;
+    height: 100%;
+}
+
+.chat__right-side {
+    width: 80%;
+    height: 100%;
+    position: relative;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login {
+    width: 500px;
+    text-align: center;
+    background: orange;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+.login__wrapper {
+    border-radius: 4px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__input {
+    border-radius: 4px;
+    width: 250px;
+    height: 44px;
+    border: 1px solid grey;
+    margin: 12px 0;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 44px;
+    border-radius: 4px;
+    border: none;
+    background: orange;
+    color: #fff;
+    margin-left: 101px;
+}
+
+.input__container {
+    width: 70%;
+}
+
+.message__area {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 98%;
+    display: flex;
+    align-items: center;
+}
+
+.message__area-input {
+    width: 90%;
+    height: 44px;
+    border-radius: 25px;
+    border: 1px solid gray;
+}
+
+.current-user {
+    display: flex;
+    align-items: center;
+}
