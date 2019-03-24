@@ -37,11 +37,9 @@ sendMessageBtn.addEventListener('click', () => {
 
 const loadImageBtn = document.getElementById('loadImage');
 
-loadImageBtn.addEventListener('click', ()=>{
-    document.getElementById('dropZone').style.display= 'block';
-    document.getElementById('dropZone').style.opacity= 1;
+loadImageBtn.addEventListener('click', () => {
+    document.getElementById('uploader').style.display = 'flex';
 })
-
 
 
 ws.onmessage = function (event) {
@@ -85,7 +83,11 @@ ws.onmessage = function (event) {
             newElement.innerText = data.messageText;
             mList.appendChild(newElement);
             break;
-        case 'userLogout':
+        case 'SUCCESS':
+            const oldImage = document.getElementById('uploadedAvatar').src;
+            document.getElementById('uploader').style.display = 'none';
+            document.getElementById('loadImage').src = oldImage;
+            document.getElementById('uploadedAvatar').src = null;
             break;
     }
 }
@@ -99,56 +101,50 @@ ws.onclose = function (event) {
     ws.send(JSON.stringify(data))
 }
 
+const upload = document.getElementById('uploadAvatar');
+upload.addEventListener('click', () => {
+
+    const dataSrc = document.getElementById('uploadedAvatar').src;
+    const userId = document.getElementById('currentUserId').innerText
+    ws.send(JSON.stringify({type: 'avatar', data: dataSrc, id: userId}))
+
+})
+
 
 ws.onerror = function (err) {
     console.log(err);
 }
 
-const dropzoneLabel = document.querySelector('.load-img__dropzone-label');
-const loadImgButton = document.querySelectorAll('.load-img__button');
+function handleFileSelect(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
 
+    var files = evt.dataTransfer.files; // FileList object.
+    getBase64(files[0]).then(
+        data => {
+            document.getElementById('uploadedAvatar').src = data;
+            console.log(data)
+        }
+    );
+}
 
-    dropzoneLabel.addEventListener('drop', e => {
-        let dt = e.dataTransfer
-        let file = dt.files
-
-        previewImage(file[0]).then(base64image => {
-            // сохраняем картинку из промиса для того чтобы функция в обработчике могла её использовать
-            _base64image = base64image;
-            console.log(_base64image)
-            loadImgButton[1].classList.remove('load-img__button--inactive');
-            loadImgButton[1].addEventListener('click', sendImageToServerWrapper);
-        });
-
-        return false;
-    });
-
-function previewImage(file) {
+function getBase64(file) {
     return new Promise((resolve, reject) => {
-        if (file.size <= 512 * 1024) {
-            // errorAlert.style.opacity = 0;
-            renderImage(file).then(base64image => resolve(base64image));
-        } else {
-            // errorAlert.style.opacity = 1;
-            reject();
-        }
-    })
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
 }
 
-// рендеринг изображения
-function renderImage(file) {
-    return new Promise((resolve) => {
-        let base64image = '';
-        var reader = new FileReader();
 
-        reader.onload = function (event) {
-            base64image = event.target.result;
-
-            dropzoneLabel.style.backgroundImage = `url(${base64image})`;
-            dropzoneLabel.innerText = ''
-
-            resolve(base64image)
-        }
-        reader.readAsDataURL(file)
-    })
+function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
 }
+
+// Setup the dnd listeners.
+var dropZone = document.getElementById('drop_zone');
+dropZone.addEventListener('dragover', handleDragOver, false);
+dropZone.addEventListener('drop', handleFileSelect, false);

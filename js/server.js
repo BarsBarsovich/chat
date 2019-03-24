@@ -93,9 +93,9 @@ wss.on('connection', function (ws) {
                 // ws.send(JSON.stringify({type: 'newMessage', messageText: messageText}));
                 break;
             case 'avatar':
-                console.log(message);
-                fs.writeFile(`./uploads/1.png`, message.data);
-                clients[id].send(JSON.stringify({type: 'upload', data:{}}))
+                console.log(message.data);
+                db.get('avatars').push({id:message.id, avatar: message.data}).write();
+                clients[id].send(JSON.stringify({type:'SUCCESS'}));
                 break;
         }
     });

@@ -1,10 +1,5 @@
 {
-  "posts": [
-    {
-      "userId": "",
-      "message": "Всем привет. Я петя"
-    }
-  ],
+  "posts": [],
   "users": [
     {
       "id": "cda72020-4e6b-11e9-932c-9d68ac6cceed",
@@ -37,7 +32,34 @@
       "data": {
         "nick": "tretre"
       },
-      "status": "unactive"
+      "status": "active"
+    },
+    {
+      "id": "8bce4cf0-4e89-11e9-80da-23b09cf3ad14",
+      "data": {
+        "nick": "fdsfds"
+      },
+      "status": "active"
+    },
+    {
+      "id": "0b4d4ee0-4e8a-11e9-80da-23b09cf3ad14",
+      "data": {
+        "nick": "2"
+      },
+      "status": "active"
+    },
+    {
+      "id": "a3829c10-4e8a-11e9-80da-23b09cf3ad14",
+      "data": {
+        "nick": "3"
+      },
+      "status": "active"
+    },
+    {
+      "id": "3d78e840-4e8d-11e9-8761-0949a3306e1e",
+      "data": {
+        "nick": "qax"
+      }
     }
   ],
   "avatars": []

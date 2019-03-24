@@ -1,101 +1,40 @@
-.load-img {
-    transition: 0.3s;
-    opacity: 0;
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    transform: translate(-50%, -50%);
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 480px;
+    font-family: sans-serif;
+    margin: 100px auto;
+    padding: 20px;
 }
-
-.load-img--active {
-    opacity: 1;
-    display: block;
+#drop-area.highlight {
+    border-color: purple;
 }
-
-.load-img__container {
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #e0e0e0;
+p {
+    margin-top: 0;
 }
-
-.load-img__header {
-    display: flex;
-    justify-content: center;
-    font-size: 18px;
-    padding-bottom: 10px;
+.my-form {
+    margin-bottom: 10px;
 }
-
-.load-img__form {
-    position: relative;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-}
-
-.load-img__dropzone {
-    /*/ / @include size(200 px);*/
-    border-radius: 10px;
-    overflow: hidden;
-    position: absolute;
-    opacity: 0;
-}
-
-.load-img-label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*@include size(200px);*/
-    /*border: 3px dashed gray;*/
-    /*color: gray;*/
-    /*transition: 0.2s;*/
-    /*background-size: cover;*/
-    /*background-position: center center;*/
-
-    /*.load-img__dropzone:focus + &, &:hover {*/
-    /*box-shadow: 0 1px 3px #B8CDF9;*/
-    /*background-color: #B8CDF9;*/
-    /*}*/
-    /*}*/
-}
-
-.load-img__bottom-row {
-    display: flex;
-    flex-direction: row;
+#gallery {
     margin-top: 10px;
-    justify-content: space-between;
 }
-
-.load-img__alert {
-    transition: 0.3s;
-    opacity: 0;
-    color: #9e0000;
+#gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
-
-.load-img--active {
-    opacity: 1;
-}
-
-.load-img__button {
-    border-radius: 10px;
+.button {
+    display: inline-block;
     padding: 10px;
-    min-width: 20%;
-    width: 20%;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
-
-.load-img--inactive {
-    cursor: not-allowed;
-    background-color: gray;
+.button:hover {
+    background: #ddd;
 }
-
-.load-img:hover {
-    background-color: gray;
-}
-
-.load-img:active {
-    background-color: gray;
+#fileElem {
+    display: none;
 }
