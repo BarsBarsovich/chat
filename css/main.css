@@ -1,3 +1,5 @@
+@import "draganddrop.css";
+
 * {
     box-sizing: border-box;
 }
@@ -20,7 +22,6 @@ body, html {
     display: none;
 }
 
-
 .chat__left-side {
     width: 20%;
     background: orange;
@@ -39,7 +40,6 @@ body, html {
     justify-content: center;
 }
 
-
 .login {
     width: 500px;
     text-align: center;
@@ -50,7 +50,6 @@ body, html {
     transform: translate(-50%, -50%);
 
 }
-
 
 .login__wrapper {
     border-radius: 4px;
@@ -105,4 +104,30 @@ body, html {
 .current-user {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
+
+.user__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noimage {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+}
+
+#drop_zone {
+    border: 5px solid blue;
+    width:  200px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    display: none;
+}
+
+
+

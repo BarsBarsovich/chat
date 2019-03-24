@@ -1,11 +1,48 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "userId": "3360a300-4e67-11e9-8a02-d7fb5d45fc0a",
+      "message": "Всем привте"
+    },
+    {
+      "userId": "3360a300-4e67-11e9-8a02-d7fb5d45fc0a",
+      "message": "Всем привте3333333333333333333"
+    }
+  ],
   "users": [
     {
-      "id": "72b30570-4cb4-11e9-a4a6-1d6159878ef1",
+      "id": "3360a300-4e67-11e9-8a02-d7fb5d45fc0a",
       "data": {
-        "nick": "432432"
+        "nick": "Вася"
+      },
+      "status": "active"
+    },
+    {
+      "id": "3370c410-4e71-11e9-a99f-234606fd2fc3",
+      "data": {
+        "nick": "tretre"
       }
+    },
+    {
+      "id": "58b66450-4e71-11e9-824e-8f47581de39e",
+      "data": {
+        "nick": "rewrewrew"
+      }
+    },
+    {
+      "id": "25265c20-4e72-11e9-8f8c-377b1ef3e3d5",
+      "data": {
+        "nick": "432"
+      },
+      "status": "unactive"
+    },
+    {
+      "id": "3dc35300-4e72-11e9-8f8c-377b1ef3e3d5",
+      "data": {
+        "nick": "fdsfds"
+      },
+      "status": "active"
     }
-  ]
+  ],
+  "avatars": []
 }
