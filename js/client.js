@@ -50,6 +50,7 @@ ws.onmessage = function (event) {
         case 'allUsers':
             const users = data.data.userOnServer;
             const posts = data.post;
+            const avatar = data.avatar;
             for (const user of users) {
 
                 if (currentUserFio == user.data.nick) {
@@ -62,6 +63,10 @@ ws.onmessage = function (event) {
                             userPost.innerText = post.message;
                             postsArea.appendChild(userPost);
                         }
+                    }
+                    if (avatar !== null && avatar !== undefined){
+                        console.log(avatar);
+                        document.getElementById('loadImage').setAttribute('src',avatar.avatar.avatar);
                     }
                 }
                 const name = user.data.nick;

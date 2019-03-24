@@ -46,7 +46,9 @@ wss.on('connection', function (ws) {
                             allPosts.splice(i,1);
                         }
                     }
-                    ws.send(JSON.stringify({type: 'allUsers', data: {userOnServer}, post: {allPosts}}));
+
+                    const avatar = db.get('avatars').find({id:previousId}).value();
+                    ws.send(JSON.stringify({type: 'allUsers', data: {userOnServer}, post: {allPosts}, avatar:{avatar}}));
                     return;
                 } else {
                     // первое что нужно сделать отдать всех пользователей, кто сейчас на серваке. Включая текущего
